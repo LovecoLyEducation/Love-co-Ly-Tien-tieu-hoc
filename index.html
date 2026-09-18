@@ -1311,72 +1311,107 @@ let recognizeTarget = "";
 
 function newRecognize(){
 
-    const target =
-        letters[Math.floor(Math.random()*letters.length)];
+  const target = letters[
+    Math.floor(Math.random() * letters.length)
+  ];
 
-    recognizeTarget = target;
+  recognizeTarget = target;
 
-    document.getElementById("targetLetter")
-        .innerText = target;
+  document.getElementById("targetLetter").innerText = target;
 
-    const options = [target];
+  const box = document.getElementById("recognizeOptions");
 
-    while(options.length < 4){
+  box.innerHTML = "";
 
-        const l =
-            letters[Math.floor(Math.random()*letters.length)];
+  // Tạo cả chữ hoa và chữ thường
+  const correctUpper = target;
+  const correctLower = letterPairs[target] || target.toLowerCase();
 
-        if(!options.includes(l)){
-            options.push(l);
-        }
+  // Tạo đáp án gồm chữ hoa + chữ thường + chữ gây nhiễu
+  const options = [
+    correctUpper,
+    correctLower
+  ];
 
-    }
+  while(options.length < 6){
 
-    options.sort(() => Math.random() - .5);
+    const randomLetter =
+      letters[Math.floor(Math.random() * letters.length)];
 
-    const box =
-        document.getElementById("recognizeOptions");
+    const forms = [
+      randomLetter,
+      letterPairs[randomLetter] || randomLetter.toLowerCase()
+    ];
 
-    box.innerHTML = "";
+    forms.forEach(letter => {
 
-    options.forEach(letter => {
-
-        const btn =
-            document.createElement("button");
-
-        btn.className = "letter-btn";
-
-        btn.innerText = letter;
-
-        btn.onclick = () => {
-
-            if(letter === recognizeTarget){
-
-                correct(
-                    document.getElementById(
-                        "recognizeMessage"
-                    )
-                );
-
-            }else{
-
-                wrong(
-                    document.getElementById(
-                        "recognizeMessage"
-                    )
-                );
-
-            }
-
-        };
-
-        box.appendChild(btn);
+      if(
+        options.length < 6 &&
+        !options.includes(letter)
+      ){
+        options.push(letter);
+      }
 
     });
 
-    document.getElementById(
-        "recognizeMessage"
-    ).innerHTML = "";
+  }
+
+  // Trộn đáp án
+  options.sort(() => Math.random() - 0.5);
+
+  options.forEach(letter => {
+
+    const btn = document.createElement("button");
+
+    btn.className = "letter-option";
+
+    btn.innerText = letter;
+
+    btn.style.fontSize = "42px";
+    btn.style.fontWeight = "700";
+    btn.style.margin = "8px";
+    btn.style.minWidth = "90px";
+    btn.style.minHeight = "80px";
+    btn.style.borderRadius = "20px";
+    btn.style.cursor = "pointer";
+
+    btn.onclick = function(){
+
+      // Chấp nhận cả chữ hoa và chữ thường
+      const isCorrect =
+        letter.toUpperCase() === target.toUpperCase();
+
+      if(isCorrect){
+
+        correct(
+          document.getElementById("recognizeMessage")
+        );
+
+        btn.style.transform = "scale(1.1)";
+
+        setTimeout(() => {
+          newRecognize();
+        }, 900);
+
+      }else{
+
+        wrong(
+          document.getElementById("recognizeMessage")
+        );
+
+        btn.style.opacity = "0.5";
+
+      }
+
+    };
+
+    box.appendChild(btn);
+
+  });
+
+  document.getElementById(
+    "recognizeMessage"
+  ).innerHTML = "";
 
 }
 
