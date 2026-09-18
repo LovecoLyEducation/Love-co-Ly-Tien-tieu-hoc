@@ -1224,21 +1224,33 @@ function speakLetter(letter){
     const sound =
         vietnameseLetterSounds[letter] || letter;
 
-    if("speechSynthesis" in window){
-
-        const speech =
-            new SpeechSynthesisUtterance(sound);
-
-        speech.lang = "vi-VN";
-
-        speech.rate = 0.7;
-
-        speech.pitch = 1;
-
-        speechSynthesis.cancel();
-
-        speechSynthesis.speak(speech);
+    if(!("speechSynthesis" in window)){
+        return;
     }
+
+    const voices = speechSynthesis.getVoices();
+
+    // Ưu tiên giọng tiếng Việt
+    let vietnameseVoice = voices.find(function(voice){
+        return voice.lang &&
+            voice.lang.toLowerCase().startsWith("vi");
+    });
+
+    const speech =
+        new SpeechSynthesisUtterance(sound);
+
+    speech.lang = "vi-VN";
+
+    if(vietnameseVoice){
+        speech.voice = vietnameseVoice;
+    }
+
+    speech.rate = 0.65;
+    speech.pitch = 1;
+
+    speechSynthesis.cancel();
+
+    speechSynthesis.speak(speech);
 }
 
 
