@@ -894,6 +894,759 @@ footer{
     font-size:12px;
   }
 }
+/* =====================================================
+   LOVE CÔ LY - GIAO DIỆN 3D MỚI
+   XANH MINT + CAM
+   ===================================================== */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"Arial",sans-serif !important;
+  background:
+    radial-gradient(circle at 5% 20%,rgba(255,255,255,.9),transparent 25%),
+    linear-gradient(180deg,#eafaf1 0%,#f9fffb 55%,#fff8e9 100%) !important;
+  color:#315c50 !important;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.header{
+  position:sticky !important;
+  top:0;
+  z-index:1000;
+
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+
+  min-height:76px;
+
+  padding:8px 25px !important;
+
+  background:
+    rgba(255,255,255,.97) !important;
+
+  color:#315c50 !important;
+
+  box-shadow:
+    0 5px 22px rgba(40,120,80,.12) !important;
+
+  border-bottom:
+    1px solid #e0f0e6;
+}
+
+
+.header h1{
+  font-size:28px !important;
+  color:#20a866 !important;
+  text-shadow:none !important;
+  margin:0 0 4px !important;
+}
+
+
+.header p{
+  font-size:12px !important;
+  color:#5c796e !important;
+  margin:0 !important;
+}
+
+
+/* =========================
+   NAV
+   ========================= */
+
+.nav{
+  position:sticky !important;
+  top:76px;
+
+  z-index:999;
+
+  background:
+    rgba(255,255,255,.96) !important;
+
+  padding:10px 15px !important;
+
+  border-bottom:
+    1px solid #e1f0e7;
+
+  box-shadow:
+    0 3px 15px rgba(50,120,80,.08) !important;
+}
+
+
+.nav a{
+  display:inline-block;
+
+  padding:9px 16px;
+
+  margin:3px;
+
+  border-radius:25px;
+
+  color:#41675a !important;
+
+  font-weight:700;
+
+  text-decoration:none;
+
+  transition:.25s;
+}
+
+
+.nav a:hover{
+  color:white !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #25ad68,
+      #178e54
+    );
+
+  transform:
+    translateY(-2px);
+}
+
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero{
+
+  max-width:1450px !important;
+
+  min-height:410px;
+
+  margin:0 auto !important;
+
+  padding:0 !important;
+
+  position:relative;
+
+  overflow:hidden;
+
+  border-radius:
+    0 0 45px 45px;
+
+  background:
+    #bcebc8 url("assets/hero.png")
+    center center / cover no-repeat !important;
+
+  box-shadow:
+    0 12px 35px
+    rgba(50,130,90,.16) !important;
+
+}
+
+
+/* ẩn chữ hero cũ vì chữ đã nằm trong ảnh */
+
+.hero h2,
+.hero p{
+  visibility:hidden;
+  height:0;
+  margin:0 !important;
+}
+
+
+/* =========================
+   SCORE
+   ========================= */
+
+.score-box{
+
+  position:relative;
+
+  z-index:20;
+
+  max-width:900px;
+
+  margin:
+    -28px auto 35px !important;
+
+  padding:
+    0 15px !important;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:15px;
+}
+
+
+.score-item{
+
+  min-width:165px;
+
+  padding:
+    14px 22px !important;
+
+  border-radius:
+    28px !important;
+
+  border:
+    2px solid #e5f4ea !important;
+
+  background:
+    rgba(255,255,255,.97) !important;
+
+  color:
+    #176d4b !important;
+
+  box-shadow:
+    0 8px 25px
+    rgba(40,120,80,.13) !important;
+
+  font-weight:800;
+
+  transition:.25s;
+}
+
+
+.score-item:hover{
+
+  transform:
+    translateY(-5px);
+
+}
+
+
+/* =========================
+   TITLE GAME
+   ========================= */
+
+#letter-games > h2{
+
+  margin:
+    35px 0 10px !important;
+
+  color:
+    #176d4b !important;
+
+  font-size:
+    31px !important;
+
+  font-weight:
+    900 !important;
+}
+
+
+#letter-games > h2:before{
+
+  content:"🚀 ";
+
+}
+
+
+/* =========================
+   GAME GRID
+   ========================= */
+
+.game-menu{
+
+  max-width:
+    1200px !important;
+
+  margin:auto !important;
+
+  padding:
+    20px 20px 55px !important;
+
+  display:grid !important;
+
+  grid-template-columns:
+    repeat(4,1fr) !important;
+
+  gap:
+    20px !important;
+
+}
+
+
+/* =========================
+   GAME CARD
+   ========================= */
+
+.game-card{
+
+  position:relative;
+
+  overflow:hidden;
+
+  min-height:280px;
+
+  padding:
+    15px 15px 20px !important;
+
+  border-radius:
+    28px !important;
+
+  border:
+    2px solid #e5f2e9 !important;
+
+  background:
+    rgba(255,255,255,.98) !important;
+
+  box-shadow:
+    0 8px 25px
+    rgba(45,120,80,.10) !important;
+
+  transition:
+    .3s ease !important;
+}
+
+
+.game-card:hover{
+
+  transform:
+    translateY(-9px)
+    scale(1.015);
+
+  box-shadow:
+    0 18px 35px
+    rgba(40,120,80,.17) !important;
+}
+
+
+/* góc trang trí */
+
+.game-card:before{
+
+  content:"";
+
+  position:absolute;
+
+  width:100px;
+  height:100px;
+
+  right:-45px;
+  top:-45px;
+
+  border-radius:50%;
+
+  background:#fff0d4;
+
+}
+
+
+.game-card:after{
+
+  content:"";
+
+  position:absolute;
+
+  width:65px;
+  height:65px;
+
+  left:-30px;
+  bottom:-30px;
+
+  border-radius:50%;
+
+  background:#e6f8ed;
+
+}
+
+
+/* =========================
+   GAME IMAGE
+   ========================= */
+
+.game-icon{
+
+  position:relative;
+
+  z-index:3;
+
+  width:
+    100% !important;
+
+  height:
+    145px !important;
+
+  margin:
+    0 auto 12px !important;
+
+  padding:0 !important;
+
+  overflow:hidden;
+
+  display:flex !important;
+
+  align-items:center;
+
+  justify-content:center;
+
+  border-radius:
+    24px !important;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fff2d4,
+      #e8f8ee
+    ) !important;
+
+  box-shadow:
+    0 7px 18px
+    rgba(50,120,80,.10) !important;
+
+  font-size:50px !important;
+}
+
+
+.game-icon img{
+
+  width:100% !important;
+
+  height:100% !important;
+
+  object-fit:cover !important;
+
+  display:block !important;
+
+}
+
+
+/* =========================
+   GAME TEXT
+   ========================= */
+
+.game-card h3{
+
+  position:relative;
+
+  z-index:4;
+
+  margin:
+    7px 0 !important;
+
+  color:
+    #176d4b !important;
+
+  font-size:
+    19px !important;
+
+  font-weight:
+    900 !important;
+}
+
+
+.game-card p{
+
+  position:relative;
+
+  z-index:4;
+
+  color:
+    #71847c !important;
+
+  font-size:
+    13px !important;
+
+  line-height:
+    1.5 !important;
+}
+
+
+/* =========================
+   NÚT CHƠI
+   ========================= */
+
+.game-card button{
+
+  position:relative;
+
+  z-index:5;
+
+  border:0;
+
+  border-radius:25px;
+
+  padding:
+    9px 24px;
+
+  color:white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #24aa66,
+      #178e52
+    );
+
+  font-weight:800;
+
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+
+.game-card button:hover{
+
+  transform:
+    translateY(-2px)
+    scale(1.03);
+}
+
+
+/* =========================
+   PARENTS
+   ========================= */
+
+.parents{
+
+  max-width:
+    1100px !important;
+
+  margin:
+    30px auto 60px !important;
+
+  padding:
+    40px 30px !important;
+
+  border-radius:
+    35px !important;
+
+  border:
+    2px solid #f1e6d0 !important;
+
+  background:
+    linear-gradient(
+      135deg,
+      #fffdf5,
+      #eff9ef
+    ) !important;
+
+  box-shadow:
+    0 10px 30px
+    rgba(70,110,80,.10) !important;
+}
+
+
+.parents h2{
+
+  color:
+    #176d4b !important;
+
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+
+  background:
+    linear-gradient(
+      135deg,
+      #176d4b,
+      #2ca466
+    ) !important;
+
+  border-radius:
+    40px 40px 0 0 !important;
+
+  padding:
+    35px 20px !important;
+
+}
+
+
+/* =========================
+   DESKTOP
+   ========================= */
+
+@media(min-width:1001px){
+
+  .header{
+    justify-content:space-between;
+  }
+
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media(max-width:1000px){
+
+  .game-menu{
+
+    grid-template-columns:
+      repeat(2,1fr) !important;
+
+  }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media(max-width:600px){
+
+  .header{
+
+    min-height:65px;
+
+    padding:
+      8px 12px !important;
+
+  }
+
+
+  .header h1{
+
+    font-size:
+      21px !important;
+
+  }
+
+
+  .header p{
+
+    font-size:
+      10px !important;
+
+  }
+
+
+  .nav{
+
+    top:65px;
+
+    overflow-x:auto;
+
+    white-space:nowrap;
+
+  }
+
+
+  .nav a{
+
+    font-size:
+      12px !important;
+
+    padding:
+      8px 10px;
+
+  }
+
+
+  .hero{
+
+    min-height:
+      300px;
+
+    border-radius:
+      0 0 28px 28px;
+
+    background-position:
+      center center;
+
+  }
+
+
+  .score-box{
+
+    margin-top:
+      -20px !important;
+
+    gap:8px;
+
+  }
+
+
+  .score-item{
+
+    min-width:
+      105px;
+
+    padding:
+      10px 8px !important;
+
+    font-size:
+      12px;
+
+  }
+
+
+  #letter-games > h2{
+
+    font-size:
+      24px !important;
+
+  }
+
+
+  .game-menu{
+
+    grid-template-columns:
+      repeat(2,1fr) !important;
+
+    gap:
+      12px !important;
+
+    padding:
+      15px 12px 35px !important;
+
+  }
+
+
+  .game-card{
+
+    min-height:
+      235px;
+
+    padding:
+      10px 8px 15px !important;
+
+    border-radius:
+      20px !important;
+
+  }
+
+
+  .game-icon{
+
+    height:
+      105px !important;
+
+    border-radius:
+      18px !important;
+
+  }
+
+
+  .game-card h3{
+
+    font-size:
+      15px !important;
+
+  }
+
+
+  .game-card p{
+
+    font-size:
+      11px !important;
+
+  }
+
+}
 </style>
 </head>
 
@@ -2741,5 +3494,42 @@ setTimeout(
 
 </script>
 
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+  const imageMap = {
+    "Nhận biết chữ cái": "assets/letter.png",
+    "Tìm chữ cái": "assets/find-letter.png",
+    "Nối chữ với hình": "assets/match-letter.png",
+    "Lật thẻ chữ cái": "assets/flip-letter.png",
+    "Vòng quay may mắn": "assets/lucky-wheel.png",
+    "Làm quen với số": "assets/numbers.png",
+    "Nhận biết hình dạng": "assets/shapes.png",
+    "Kỹ năng sống": "assets/life-skills.png"
+  };
+
+  document.querySelectorAll(".game-card").forEach(function(card){
+
+    const title = card.querySelector("h3");
+    const icon = card.querySelector(".game-icon");
+
+    if(!title || !icon) return;
+
+    const name = title.textContent.trim();
+
+    if(imageMap[name]){
+      icon.innerHTML = `
+        <img
+          src="${imageMap[name]}"
+          alt="${name}"
+          loading="lazy"
+        >
+      `;
+    }
+
+  });
+
+});
+</script>
 </body>
 </html>
