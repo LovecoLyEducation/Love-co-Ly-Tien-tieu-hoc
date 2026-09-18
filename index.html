@@ -1,287 +1,2265 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Love cô Ly - Tiền tiểu học</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<title>Love cô Ly - Bé vui học chữ</title>
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #f0fff4;
-            color: #333;
-        }
+<style>
 
-        header {
-            background: linear-gradient(135deg, #63c174, #ffb347);
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-        header h1 {
-            font-size: 38px;
-            margin-bottom: 10px;
-        }
+body{
+    font-family:Arial, sans-serif;
+    background:#effff4;
+    color:#333;
+}
 
-        header p {
-            font-size: 20px;
-        }
+/* ================= HEADER ================= */
 
-        nav {
-            background: white;
-            padding: 15px;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
+.header{
+    background:linear-gradient(135deg,#62c46e,#ffb347);
+    color:white;
+    text-align:center;
+    padding:28px 15px;
+}
 
-        nav a {
-            text-decoration: none;
-            color: #26734d;
-            font-weight: bold;
-            margin: 0 12px;
-        }
+.header h1{
+    font-size:38px;
+    margin-bottom:8px;
+}
 
-        .hero {
-            text-align: center;
-            padding: 45px 20px;
-        }
+.header p{
+    font-size:19px;
+}
 
-        .hero h2 {
-            color: #26734d;
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
+/* ================= NAV ================= */
 
-        .hero p {
-            font-size: 19px;
-            margin-bottom: 25px;
-        }
+.nav{
+    background:white;
+    padding:14px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,.1);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 20px;
-        }
+.nav a{
+    text-decoration:none;
+    color:#26734d;
+    font-weight:bold;
+    margin:5px 12px;
+}
 
-        .section-title {
-            text-align: center;
-            color: #26734d;
-            margin: 30px 0 25px;
-            font-size: 28px;
-        }
+/* ================= HERO ================= */
 
-        .games {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
+.hero{
+    text-align:center;
+    padding:35px 15px 20px;
+}
 
-        .card {
-            background: white;
-            border-radius: 20px;
-            padding: 30px 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-            transition: 0.3s;
-        }
+.hero h2{
+    color:#20744b;
+    font-size:32px;
+    margin-bottom:10px;
+}
 
-        .card:hover {
-            transform: translateY(-5px);
-        }
+.hero p{
+    font-size:18px;
+}
 
-        .icon {
-            font-size: 55px;
-            margin-bottom: 15px;
-        }
+/* ================= SCORE ================= */
 
-        .card h3 {
-            color: #26734d;
-            margin-bottom: 10px;
-            font-size: 21px;
-        }
+.score-box{
+    max-width:1000px;
+    margin:15px auto;
+    padding:15px;
+    display:flex;
+    justify-content:center;
+    gap:25px;
+    flex-wrap:wrap;
+}
 
-        .card p {
-            margin-bottom: 18px;
-            color: #666;
-        }
+.score-item{
+    background:white;
+    padding:12px 25px;
+    border-radius:30px;
+    box-shadow:0 3px 10px rgba(0,0,0,.08);
+    font-weight:bold;
+    color:#26734d;
+}
 
-        .btn {
-            display: inline-block;
-            padding: 12px 22px;
-            background: #63c174;
-            color: white;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* ================= GAME MENU ================= */
 
-        .btn:hover {
-            background: #429653;
-        }
+.game-menu{
+    max-width:1100px;
+    margin:auto;
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+}
 
-        .parents {
-            background: white;
-            margin-top: 50px;
-            padding: 35px 20px;
-            border-radius: 25px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-        }
+.game-card{
+    background:white;
+    border-radius:22px;
+    padding:25px 18px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+    transition:.25s;
+    cursor:pointer;
+}
 
-        .parents h2 {
-            color: #26734d;
-            margin-bottom: 20px;
-        }
+.game-card:hover{
+    transform:translateY(-5px);
+}
 
-        .parent-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-        }
+.game-icon{
+    font-size:52px;
+    margin-bottom:12px;
+}
 
-        footer {
-            margin-top: 50px;
-            background: #26734d;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+.game-card h3{
+    color:#26734d;
+    margin-bottom:8px;
+}
 
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 30px;
-            }
+.game-card p{
+    color:#666;
+    line-height:1.5;
+}
 
-            .hero h2 {
-                font-size: 26px;
-            }
+/* ================= BUTTON ================= */
 
-            nav a {
-                display: inline-block;
-                margin: 5px;
-            }
-        }
-    </style>
+.btn{
+    border:none;
+    background:#5fc474;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    padding:13px 25px;
+    border-radius:30px;
+    cursor:pointer;
+    margin:8px;
+}
+
+.btn:hover{
+    background:#3f9e56;
+}
+
+.btn.orange{
+    background:#ffad45;
+}
+
+.btn.blue{
+    background:#4e9de6;
+}
+
+.btn.pink{
+    background:#ec77a5;
+}
+
+/* ================= GAME AREA ================= */
+
+.game-area{
+    max-width:1000px;
+    margin:20px auto 50px;
+    padding:25px;
+}
+
+.game{
+    display:none;
+    background:white;
+    border-radius:28px;
+    padding:30px 20px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    text-align:center;
+}
+
+.game.active{
+    display:block;
+}
+
+.game h2{
+    color:#26734d;
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.instruction{
+    font-size:18px;
+    margin:15px auto 25px;
+    max-width:700px;
+}
+
+/* ================= LETTER ================= */
+
+.big-letter{
+    font-size:110px;
+    color:#26734d;
+    font-weight:bold;
+    margin:15px;
+}
+
+.letter-options{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:15px;
+}
+
+.letter-btn{
+    width:80px;
+    height:80px;
+    border:none;
+    border-radius:20px;
+    background:#f1f8ff;
+    color:#26734d;
+    font-size:42px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.letter-btn:hover{
+    background:#d9f4df;
+}
+
+/* ================= CIRCLE GAME ================= */
+
+.circle-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+    max-width:650px;
+    margin:25px auto;
+}
+
+.circle-letter{
+    height:80px;
+    border-radius:50%;
+    border:4px solid transparent;
+    background:#fff7df;
+    color:#26734d;
+    font-size:35px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.circle-letter:hover{
+    border-color:#ffb347;
+}
+
+/* ================= MATCH GAME ================= */
+
+.match-area{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.match-column{
+    min-width:230px;
+}
+
+.match-title{
+    font-size:20px;
+    color:#26734d;
+    font-weight:bold;
+    margin-bottom:15px;
+}
+
+.match-item{
+    background:#f7fbff;
+    border:3px solid #d8e9f7;
+    border-radius:18px;
+    padding:15px;
+    margin:10px;
+    cursor:pointer;
+    font-size:35px;
+}
+
+.match-item.selected{
+    border-color:#ffad45;
+    background:#fff4db;
+}
+
+.picture{
+    font-size:48px;
+}
+
+.word{
+    font-size:18px;
+    margin-top:5px;
+}
+
+/* ================= FLIP CARDS ================= */
+
+.flip-grid{
+    display:grid;
+    grid-template-columns:repeat(4,130px);
+    justify-content:center;
+    gap:18px;
+    margin:25px auto;
+}
+
+.flip-card{
+    width:130px;
+    height:150px;
+    perspective:800px;
+    cursor:pointer;
+}
+
+.flip-inner{
+    position:relative;
+    width:100%;
+    height:100%;
+    transition:transform .6s;
+    transform-style:preserve-3d;
+}
+
+.flip-card.flipped .flip-inner{
+    transform:rotateY(180deg);
+}
+
+.flip-front,
+.flip-back{
+    position:absolute;
+    width:100%;
+    height:100%;
+    backface-visibility:hidden;
+    border-radius:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:50px;
+    font-weight:bold;
+}
+
+.flip-front{
+    background:linear-gradient(135deg,#67c779,#8ad6ff);
+    color:white;
+}
+
+.flip-back{
+    background:#fff4d9;
+    transform:rotateY(180deg);
+    color:#26734d;
+}
+
+/* ================= WHEEL ================= */
+
+.wheel{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    margin:25px auto;
+    border:10px solid white;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+    background:
+    conic-gradient(
+        #ffb347 0deg 45deg,
+        #65c875 45deg 90deg,
+        #77b8ed 90deg 135deg,
+        #ee82a7 135deg 180deg,
+        #ffcc55 180deg 225deg,
+        #75cfc0 225deg 270deg,
+        #9c8bea 270deg 315deg,
+        #ff8e8e 315deg 360deg
+    );
+    position:relative;
+    transition:transform 3s cubic-bezier(.15,.75,.15,1);
+}
+
+.wheel-center{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:75px;
+    height:75px;
+    background:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-weight:bold;
+    color:#26734d;
+}
+
+.pointer{
+    font-size:35px;
+}
+
+/* ================= DIFFERENT ================= */
+
+.different-grid{
+    display:grid;
+    grid-template-columns:repeat(5,80px);
+    justify-content:center;
+    gap:15px;
+    margin:25px auto;
+}
+
+.diff-item{
+    width:80px;
+    height:80px;
+    background:#f2fff5;
+    border-radius:20px;
+    border:3px solid #e1f0e5;
+    font-size:38px;
+    font-weight:bold;
+    color:#26734d;
+    cursor:pointer;
+}
+
+/* ================= MISSING ================= */
+
+.sequence{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin:25px;
+}
+
+.sequence span{
+    width:65px;
+    height:65px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#eff8ff;
+    border-radius:15px;
+    font-size:32px;
+    font-weight:bold;
+    color:#26734d;
+}
+
+.sequence .missing{
+    background:#fff0c9;
+    border:3px dashed #ffad45;
+}
+
+/* ================= TRACING ================= */
+
+.trace-box{
+    position:relative;
+    width:320px;
+    height:320px;
+    margin:20px auto;
+    border:4px dashed #b9d8c0;
+    border-radius:25px;
+    background:#fbfffc;
+    overflow:hidden;
+}
+
+.trace-letter{
+    position:absolute;
+    font-size:230px;
+    font-weight:bold;
+    color:#d9eadc;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    user-select:none;
+}
+
+#traceCanvas{
+    position:absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    cursor:crosshair;
+}
+
+/* ================= MESSAGE ================= */
+
+.message{
+    min-height:35px;
+    font-size:20px;
+    font-weight:bold;
+    margin:15px;
+}
+
+.success{
+    color:#219653;
+}
+
+.fail{
+    color:#e05252;
+}
+
+/* ================= PARENTS ================= */
+
+.parents{
+    max-width:1000px;
+    margin:30px auto 50px;
+    background:white;
+    padding:30px 20px;
+    border-radius:25px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.parents h2{
+    color:#26734d;
+    margin-bottom:15px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#26734d;
+    color:white;
+    text-align:center;
+    padding:25px;
+    line-height:1.7;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:600px){
+
+    .header h1{
+        font-size:30px;
+    }
+
+    .hero h2{
+        font-size:25px;
+    }
+
+    .circle-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .flip-grid{
+        grid-template-columns:repeat(2,130px);
+    }
+
+    .different-grid{
+        grid-template-columns:repeat(3,80px);
+    }
+
+    .big-letter{
+        font-size:85px;
+    }
+
+    .trace-box{
+        width:290px;
+        height:290px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
-<header>
+<!-- ================= HEADER ================= -->
+
+<header class="header">
+
     <h1>🌱 LOVE CÔ LY 🌱</h1>
+
     <p>Ươm mầm trí tuệ Việt</p>
+
 </header>
 
-<nav>
-    <a href="#">🏠 Trang chủ</a>
-    <a href="#games">🎮 Trò chơi</a>
+
+<!-- ================= NAV ================= -->
+
+<nav class="nav">
+
+    <a href="#" onclick="showHome()">🏠 Trang chủ</a>
+
+    <a href="#letter-games">🔤 Bé vui học chữ</a>
+
     <a href="#parents">👨‍👩‍👧 Phụ huynh</a>
+
 </nav>
 
+
+<!-- ================= HERO ================= -->
+
 <section class="hero">
-    <h2>🎈 Bé học mà chơi – Chơi mà học 🎈</h2>
+
+    <h2>🔤 BÉ VUI HỌC CHỮ 🌈</h2>
+
     <p>
-        Website học tập dành cho bé tiền tiểu học 4–5 tuổi
+        Cùng cô Ly khám phá thế giới chữ cái thật vui!
     </p>
-    <a href="#games" class="btn">BẮT ĐẦU HỌC 🚀</a>
+
 </section>
 
-<div class="container">
 
-    <h2 class="section-title" id="games">
-        🎮 KHO TRÒ CHƠI HỌC TẬP
-    </h2>
+<!-- ================= SCORE ================= -->
 
-    <div class="games">
+<div class="score-box">
 
-        <div class="card">
-            <div class="icon">🔤</div>
-            <h3>Bé vui học chữ</h3>
-            <p>Nhận biết và làm quen với bảng chữ cái.</p>
-            <a href="#" class="btn">Chơi ngay</a>
+    <div class="score-item">
+        ⭐ Điểm: <span id="score">0</span>
+    </div>
+
+    <div class="score-item">
+        🌟 Sao: <span id="stars">0</span>
+    </div>
+
+    <div class="score-item">
+        🎯 Hoàn thành: <span id="completed">0</span>
+    </div>
+
+</div>
+
+
+<!-- ================= GAME MENU ================= -->
+
+<section id="letter-games">
+
+<h2 style="text-align:center;color:#26734d;margin-top:20px;">
+🎮 CHỌN HOẠT ĐỘNG
+</h2>
+
+<div class="game-menu">
+
+    <div class="game-card" onclick="openGame('recognize')">
+
+        <div class="game-icon">🔤</div>
+
+        <h3>Nhận biết chữ cái</h3>
+
+        <p>
+            Bé nhìn, nghe và chọn đúng chữ cái.
+        </p>
+
+    </div>
+
+
+    <div class="game-card" onclick="openGame('circle')">
+
+        <div class="game-icon">⭕</div>
+
+        <h3>Khoanh tròn chữ cái</h3>
+
+        <p>
+            Tìm và chọn tất cả chữ cái giống nhau.
+        </p>
+
+    </div>
+
+
+    <div class="game-card" onclick="openGame('match')">
+
+        <div class="game-icon">🔗</div>
+
+        <h3>Nối chữ với hình</h3>
+
+        <p>
+            Ghép chữ cái với hình ảnh phù hợp.
+        </p>
+
+    </div>
+
+
+    <div class="game-card" onclick="openGame('flip')">
+
+        <div class="game-icon">🃏</div>
+
+        <h3>Lật mở chữ cái</h3>
+
+        <p>
+            Lật thẻ và tìm cặp giống nhau.
+        </p>
+
+    </div>
+
+
+    <div class="game-card" onclick="openGame('wheel')">
+
+        <div class="game-icon">🎡</div>
+
+        <h3>Vòng quay may mắn</h3>
+
+        <p>
+            Quay vòng quay để nhận nhiệm vụ.
+        </p>
+
+    </div>
+
+
+    <div class="game-card" onclick="openGame('different')">
+
+        <div class="game-icon">🔍</div>
+
+        <h3>Tìm chữ khác biệt</h3>
+
+        <p>
+            Rèn khả năng quan sát và chú ý.
+        </p>
+
+    </div>
+
+
+    <div class="game-card" onclick="openGame('missing')">
+
+        <div class="game-icon">🧩</div>
+
+        <h3>Tìm chữ còn thiếu</h3>
+
+        <p>
+            Hoàn thành dãy chữ cái.
+        </p>
+
+    </div>
+
+
+    <div class="game-card" onclick="openGame('trace')">
+
+        <div class="game-icon">✏️</div>
+
+        <h3>Bé tập tô chữ</h3>
+
+        <p>
+            Dùng chuột hoặc ngón tay tô theo chữ.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- ================= GAME AREA ================= -->
+
+<div class="game-area">
+
+
+<!-- NHẬN BIẾT -->
+
+<div id="recognize" class="game">
+
+    <h2>🔤 Nhận biết chữ cái</h2>
+
+    <p class="instruction">
+        Bé hãy chọn chữ cái giống với chữ cô Ly đang hỏi nhé!
+    </p>
+
+    <div class="big-letter" id="targetLetter">
+        A
+    </div>
+
+    <button class="btn blue" onclick="speakTarget()">
+        🔊 Nghe chữ
+    </button>
+
+    <div id="recognizeOptions" class="letter-options"></div>
+
+    <div id="recognizeMessage" class="message"></div>
+
+    <button class="btn" onclick="newRecognize()">
+        🔄 Câu tiếp theo
+    </button>
+
+</div>
+
+
+<!-- KHOANH -->
+
+<div id="circle" class="game">
+
+    <h2>⭕ Khoanh tròn chữ cái</h2>
+
+    <p class="instruction">
+        Hãy tìm và chọn tất cả chữ
+        <strong id="circleTarget"></strong>
+        nhé!
+    </p>
+
+    <div id="circleGrid" class="circle-grid"></div>
+
+    <div id="circleMessage" class="message"></div>
+
+    <button class="btn" onclick="newCircle()">
+        🔄 Chơi lại
+    </button>
+
+</div>
+
+
+<!-- NỐI -->
+
+<div id="match" class="game">
+
+    <h2>🔗 Nối chữ cái với hình</h2>
+
+    <p class="instruction">
+        Bé chọn một chữ cái rồi chọn hình tương ứng.
+    </p>
+
+    <div class="match-area">
+
+        <div class="match-column">
+
+            <div class="match-title">
+                🔤 Chữ cái
+            </div>
+
+            <div id="matchLetters"></div>
+
         </div>
 
-        <div class="card">
-            <div class="icon">📖</div>
-            <h3>Bé tập đọc</h3>
-            <p>Làm quen với âm, tiếng, từ và câu đơn giản.</p>
-            <a href="#" class="btn">Học ngay</a>
-        </div>
 
-        <div class="card">
-            <div class="icon">🔢</div>
-            <h3>Bé vui học Toán</h3>
-            <p>Đếm số, nhận biết số và làm quen phép tính.</p>
-            <a href="#" class="btn">Chơi ngay</a>
-        </div>
+        <div class="match-column">
 
-        <div class="card">
-            <div class="icon">🧠</div>
-            <h3>Toán tư duy</h3>
-            <p>Phát triển tư duy logic và khả năng quan sát.</p>
-            <a href="#" class="btn">Khám phá</a>
-        </div>
+            <div class="match-title">
+                🖼️ Hình ảnh
+            </div>
 
-        <div class="card">
-            <div class="icon">🎯</div>
-            <h3>Trò chơi thông minh</h3>
-            <p>Rèn trí nhớ, chú ý, phản xạ và khả năng suy luận.</p>
-            <a href="#" class="btn">Chơi ngay</a>
-        </div>
+            <div id="matchPictures"></div>
 
-        <div class="card">
-            <div class="icon">🎨</div>
-            <h3>Khéo tay – sáng tạo</h3>
-            <p>Các hoạt động giúp bé phát triển sự sáng tạo.</p>
-            <a href="#" class="btn">Khám phá</a>
         </div>
 
     </div>
 
-    <section class="parents" id="parents">
+    <div id="matchMessage" class="message"></div>
 
-        <h2>👨‍👩‍👧 GÓC DÀNH CHO PHỤ HUYNH</h2>
-
-        <p style="margin-bottom:25px;">
-            Đồng hành cùng cha mẹ trong hành trình chuẩn bị cho bé vào lớp 1.
-        </p>
-
-        <div class="parent-buttons">
-
-            <a href="#" class="btn">
-                📚 Đăng ký mua sách
-            </a>
-
-            <a href="#" class="btn">
-                👩‍🏫 Hướng dẫn dạy con tại nhà
-            </a>
-
-            <a href="#" class="btn">
-                📝 Đăng ký học cùng cô Ly
-            </a>
-
-            <a href="#" class="btn">
-                💬 Liên hệ cô Ly
-            </a>
-
-        </div>
-
-    </section>
+    <button class="btn" onclick="newMatch()">
+        🔄 Chơi lại
+    </button>
 
 </div>
 
+
+<!-- LẬT THẺ -->
+
+<div id="flip" class="game">
+
+    <h2>🃏 Lật mở chữ cái</h2>
+
+    <p class="instruction">
+        Bé hãy lật các thẻ và tìm hai thẻ giống nhau.
+    </p>
+
+    <div id="flipGrid" class="flip-grid"></div>
+
+    <div id="flipMessage" class="message"></div>
+
+    <button class="btn" onclick="newFlip()">
+        🔄 Chơi lại
+    </button>
+
+</div>
+
+
+<!-- VÒNG QUAY -->
+
+<div id="wheel" class="game">
+
+    <h2>🎡 Vòng quay may mắn</h2>
+
+    <p class="instruction">
+        Bé bấm quay và thực hiện nhiệm vụ xuất hiện nhé!
+    </p>
+
+    <div class="pointer">🔻</div>
+
+    <div id="luckywheel" class="wheel">
+
+        <div class="wheel-center">
+            QUAY
+        </div>
+
+    </div>
+
+    <button class="btn orange" onclick="spinWheel()">
+        🎡 QUAY NGAY
+    </button>
+
+    <div id="wheelMessage" class="message"></div>
+
+</div>
+
+
+<!-- TÌM KHÁC -->
+
+<div id="different" class="game">
+
+    <h2>🔍 Tìm chữ khác biệt</h2>
+
+    <p class="instruction">
+        Có một chữ khác với các chữ còn lại.
+        Bé tìm xem đó là chữ nào!
+    </p>
+
+    <div id="differentGrid" class="different-grid"></div>
+
+    <div id="differentMessage" class="message"></div>
+
+    <button class="btn" onclick="newDifferent()">
+        🔄 Câu mới
+    </button>
+
+</div>
+
+
+<!-- CHỮ THIẾU -->
+
+<div id="missing" class="game">
+
+    <h2>🧩 Tìm chữ còn thiếu</h2>
+
+    <p class="instruction">
+        Chữ nào còn thiếu trong dãy?
+    </p>
+
+    <div id="sequence" class="sequence"></div>
+
+    <div id="missingOptions" class="letter-options"></div>
+
+    <div id="missingMessage" class="message"></div>
+
+</div>
+
+
+<!-- TÔ CHỮ -->
+
+<div id="trace" class="game">
+
+    <h2>✏️ Bé tập tô chữ</h2>
+
+    <p class="instruction">
+        Bé dùng chuột hoặc ngón tay tô theo chữ mẫu.
+    </p>
+
+    <div class="trace-box">
+
+        <div id="traceLetter" class="trace-letter">
+            A
+        </div>
+
+        <canvas id="traceCanvas"></canvas>
+
+    </div>
+
+    <button class="btn" onclick="clearCanvas()">
+        🧹 Xóa
+    </button>
+
+    <button class="btn blue" onclick="newTrace()">
+        🔄 Chữ khác
+    </button>
+
+</div>
+
+</div>
+
+
+<!-- ================= PARENTS ================= -->
+
+<section id="parents" class="parents">
+
+    <h2>👨‍👩‍👧 GÓC DÀNH CHO PHỤ HUYNH</h2>
+
+    <p style="margin-bottom:20px;">
+        Đồng hành cùng cha mẹ trong hành trình chuẩn bị cho bé vào lớp 1.
+    </p>
+
+    <button class="btn" onclick="parentMessage('book')">
+        📚 Đăng ký mua sách
+    </button>
+
+    <button class="btn orange" onclick="parentMessage('home')">
+        👩‍🏫 Hướng dẫn dạy con tại nhà
+    </button>
+
+    <button class="btn blue" onclick="parentMessage('class')">
+        📝 Đăng ký học cùng cô Ly
+    </button>
+
+    <button class="btn pink" onclick="parentMessage('contact')">
+        💬 Liên hệ cô Ly
+    </button>
+
+    <div id="parentMessage"
+         class="message">
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-    <p><strong>LOVE CÔ LY</strong></p>
-    <p>Ươm mầm trí tuệ Việt 🌱</p>
-    <p>Website học tập dành cho trẻ tiền tiểu học 4–5 tuổi</p>
+
+    <p><strong>🌱 LOVE CÔ LY 🌱</strong></p>
+
+    <p>Ươm mầm trí tuệ Việt</p>
+
+    <p>
+        Website học tập dành cho trẻ tiền tiểu học 4–5 tuổi
+    </p>
+
 </footer>
+
+
+<script>
+
+/* =====================================================
+   DỮ LIỆU CHỮ CÁI
+===================================================== */
+
+const letters = [
+"A","Ă","Â","B","C","D","Đ","E","Ê",
+"G","H","I","K","L","M","N","O","Ô","Ơ",
+"P","Q","R","S","T","U","Ư","V","X","Y"
+];
+
+
+/* =====================================================
+   DỮ LIỆU CHỮ + HÌNH
+===================================================== */
+
+const pictureData = [
+
+    {letter:"A", picture:"🍎", word:"Táo"},
+    {letter:"Ă", picture:"🎃", word:"Bí ngô"},
+    {letter:"Â", picture:"🥤", word:"Ấm"},
+    {letter:"B", picture:"🦋", word:"Bướm"},
+    {letter:"C", picture:"🐟", word:"Cá"},
+    {letter:"D", picture:"🍉", word:"Dưa"},
+    {letter:"Đ", picture:"🐘", word:"Đồ vật / Đ voi"},
+    {letter:"E", picture:"🦆", word:"Én"},
+    {letter:"Ê", picture:"🐸", word:"Ếch"},
+    {letter:"G", picture:"🐔", word:"Gà"},
+    {letter:"H", picture:"🌸", word:"Hoa"},
+    {letter:"I", picture:"🦔", word:"Nhím"},
+    {letter:"K", picture:"🔑", word:"Khóa"},
+    {letter:"L", picture:"🍋", word:"Lê"},
+    {letter:"M", picture:"🐱", word:"Mèo"},
+    {letter:"N", picture:"🐌", word:"Ốc / N"},
+    {letter:"O", picture:"⭕", word:"O"},
+    {letter:"Ô", picture:"☂️", word:"Ô"},
+    {letter:"Ơ", picture:"🐢", word:"Rùa"},
+    {letter:"P", picture:"🍍", word:"Dứa"},
+    {letter:"Q", picture:"🎁", word:"Quà"},
+    {letter:"R", picture:"🌈", word:"Rồng"},
+    {letter:"S", picture:"🌳", word:"Sông / cây"},
+    {letter:"T", picture:"🐰", word:"Thỏ"},
+    {letter:"U", picture:"☂️", word:"Ô"},
+    {letter:"Ư", picture:"🦋", word:"Bướm"},
+    {letter:"V", picture:"🌱", word:"Vườn"},
+    {letter:"X", picture:"🚗", word:"Xe"},
+    {letter:"Y", picture:"🩺", word:"Y tế"}
+
+];
+
+
+/* =====================================================
+   ĐIỂM
+===================================================== */
+
+let score = 0;
+let stars = 0;
+let completed = 0;
+
+function updateScore(){
+
+    document.getElementById("score").innerText = score;
+
+    document.getElementById("stars").innerText = stars;
+
+    document.getElementById("completed").innerText = completed;
+
+}
+
+
+function correct(messageElement){
+
+    score += 10;
+
+    stars += 1;
+
+    completed += 1;
+
+    updateScore();
+
+    messageElement.innerHTML =
+        "🎉 Tuyệt vời! Bé làm đúng rồi! ⭐";
+
+    messageElement.className =
+        "message success";
+
+    speak("Giỏi lắm! Bé làm đúng rồi!");
+
+}
+
+
+function wrong(messageElement){
+
+    messageElement.innerHTML =
+        "💛 Bé thử lại nhé!";
+
+    messageElement.className =
+        "message fail";
+
+}
+
+
+/* =====================================================
+   MỞ GAME
+===================================================== */
+
+function openGame(id){
+
+    document.querySelectorAll(".game")
+        .forEach(g => g.classList.remove("active"));
+
+    document.getElementById(id)
+        .classList.add("active");
+
+    document.getElementById(id)
+        .scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+
+    if(id === "recognize"){
+        newRecognize();
+    }
+
+    if(id === "circle"){
+        newCircle();
+    }
+
+    if(id === "match"){
+        newMatch();
+    }
+
+    if(id === "flip"){
+        newFlip();
+    }
+
+    if(id === "different"){
+        newDifferent();
+    }
+
+    if(id === "missing"){
+        newMissing();
+    }
+
+    if(id === "trace"){
+        newTrace();
+    }
+
+}
+
+
+function showHome(){
+
+    document.querySelectorAll(".game")
+        .forEach(g => g.classList.remove("active"));
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =====================================================
+   PHÁT ÂM
+===================================================== */
+
+function speak(text){
+
+    if("speechSynthesis" in window){
+
+        const speech =
+            new SpeechSynthesisUtterance(text);
+
+        speech.lang = "vi-VN";
+
+        speech.rate = 0.8;
+
+        speechSynthesis.cancel();
+
+        speechSynthesis.speak(speech);
+
+    }
+
+}
+
+
+/* =====================================================
+   GAME 1: NHẬN BIẾT
+===================================================== */
+
+let recognizeTarget = "";
+
+function newRecognize(){
+
+    const target =
+        letters[Math.floor(Math.random()*letters.length)];
+
+    recognizeTarget = target;
+
+    document.getElementById("targetLetter")
+        .innerText = target;
+
+    const options = [target];
+
+    while(options.length < 4){
+
+        const l =
+            letters[Math.floor(Math.random()*letters.length)];
+
+        if(!options.includes(l)){
+            options.push(l);
+        }
+
+    }
+
+    options.sort(() => Math.random() - .5);
+
+    const box =
+        document.getElementById("recognizeOptions");
+
+    box.innerHTML = "";
+
+    options.forEach(letter => {
+
+        const btn =
+            document.createElement("button");
+
+        btn.className = "letter-btn";
+
+        btn.innerText = letter;
+
+        btn.onclick = () => {
+
+            if(letter === recognizeTarget){
+
+                correct(
+                    document.getElementById(
+                        "recognizeMessage"
+                    )
+                );
+
+            }else{
+
+                wrong(
+                    document.getElementById(
+                        "recognizeMessage"
+                    )
+                );
+
+            }
+
+        };
+
+        box.appendChild(btn);
+
+    });
+
+    document.getElementById(
+        "recognizeMessage"
+    ).innerHTML = "";
+
+}
+
+
+function speakTarget(){
+
+    speak(
+        "Chữ " + recognizeTarget
+    );
+
+}
+
+
+/* =====================================================
+   GAME 2: KHOANH TRÒN
+===================================================== */
+
+let circleTarget = "";
+let circleCorrect = 0;
+let circleFound = 0;
+
+function newCircle(){
+
+    circleTarget =
+        letters[
+            Math.floor(
+                Math.random()*letters.length
+            )
+        ];
+
+    circleCorrect = 0;
+    circleFound = 0;
+
+    document.getElementById(
+        "circleTarget"
+    ).innerText = circleTarget;
+
+
+    const grid =
+        document.getElementById("circleGrid");
+
+    grid.innerHTML = "";
+
+
+    const arr = [];
+
+    for(let i=0;i<8;i++){
+
+        arr.push(circleTarget);
+
+    }
+
+    for(let i=0;i<8;i++){
+
+        let l;
+
+        do{
+
+            l =
+                letters[
+                    Math.floor(
+                        Math.random()*letters.length
+                    )
+                ];
+
+        }while(l === circleTarget);
+
+        arr.push(l);
+
+    }
+
+    arr.sort(() => Math.random()-.5);
+
+
+    arr.forEach(letter => {
+
+        const btn =
+            document.createElement("button");
+
+        btn.className = "circle-letter";
+
+        btn.innerText = letter;
+
+        btn.onclick = () => {
+
+            if(letter === circleTarget){
+
+                if(!btn.dataset.clicked){
+
+                    btn.dataset.clicked = "true";
+
+                    btn.style.background =
+                        "#c9f5d1";
+
+                    btn.style.borderColor =
+                        "#49ad61";
+
+                    circleFound++;
+
+                    if(circleFound === 8){
+
+                        correct(
+                            document.getElementById(
+                                "circleMessage"
+                            )
+                        );
+
+                    }
+
+                }
+
+            }else{
+
+                wrong(
+                    document.getElementById(
+                        "circleMessage"
+                    )
+                );
+
+            }
+
+        };
+
+        grid.appendChild(btn);
+
+    });
+
+    document.getElementById(
+        "circleMessage"
+    ).innerHTML = "";
+
+}
+
+
+/* =====================================================
+   GAME 3: NỐI CHỮ VỚI HÌNH
+===================================================== */
+
+let selectedLetter = null;
+let selectedPicture = null;
+
+function newMatch(){
+
+    selectedLetter = null;
+    selectedPicture = null;
+
+    const data =
+        [...pictureData]
+        .sort(() => Math.random()-.5)
+        .slice(0,4);
+
+
+    const lettersBox =
+        document.getElementById(
+            "matchLetters"
+        );
+
+    const picturesBox =
+        document.getElementById(
+            "matchPictures"
+        );
+
+    lettersBox.innerHTML = "";
+    picturesBox.innerHTML = "";
+
+
+    data.forEach(item => {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "match-item";
+
+        div.innerText = item.letter;
+
+        div.dataset.letter =
+            item.letter;
+
+        div.onclick = function(){
+
+            document.querySelectorAll(
+                "#matchLetters .match-item"
+            ).forEach(x =>
+                x.classList.remove("selected")
+            );
+
+            this.classList.add("selected");
+
+            selectedLetter =
+                this.dataset.letter;
+
+            checkMatch();
+
+        };
+
+        lettersBox.appendChild(div);
+
+    });
+
+
+    data
+    .sort(() => Math.random()-.5)
+    .forEach(item => {
+
+        const div =
+            document.createElement("div");
+
+        div.className = "match-item";
+
+        div.innerHTML =
+            `<div class="picture">${item.picture}</div>
+             <div class="word">${item.word}</div>`;
+
+        div.dataset.letter =
+            item.letter;
+
+        div.onclick = function(){
+
+            document.querySelectorAll(
+                "#matchPictures .match-item"
+            ).forEach(x =>
+                x.classList.remove("selected")
+            );
+
+            this.classList.add("selected");
+
+            selectedPicture =
+                this.dataset.letter;
+
+            checkMatch();
+
+        };
+
+        picturesBox.appendChild(div);
+
+    });
+
+}
+
+
+function checkMatch(){
+
+    if(
+        selectedLetter &&
+        selectedPicture
+    ){
+
+        const msg =
+            document.getElementById(
+                "matchMessage"
+            );
+
+        if(
+            selectedLetter ===
+            selectedPicture
+        ){
+
+            correct(msg);
+
+            selectedLetter = null;
+            selectedPicture = null;
+
+        }else{
+
+            wrong(msg);
+
+            selectedPicture = null;
+
+        }
+
+    }
+
+}
+
+
+/* =====================================================
+   GAME 4: LẬT THẺ
+===================================================== */
+
+let flipFirst = null;
+let flipSecond = null;
+let flipLock = false;
+let flipMatches = 0;
+
+function newFlip(){
+
+    flipFirst = null;
+    flipSecond = null;
+    flipLock = false;
+    flipMatches = 0;
+
+    const data =
+        [...pictureData]
+        .sort(() => Math.random()-.5)
+        .slice(0,4);
+
+
+    let cards = [];
+
+    data.forEach(item => {
+
+        cards.push({
+            value:item.letter,
+            type:"letter"
+        });
+
+        cards.push({
+            value:item.picture,
+            type:"picture"
+        });
+
+    });
+
+
+    cards.sort(() => Math.random()-.5);
+
+
+    const grid =
+        document.getElementById(
+            "flipGrid"
+        );
+
+    grid.innerHTML = "";
+
+
+    cards.forEach((card,index) => {
+
+        const wrapper =
+            document.createElement("div");
+
+        wrapper.className =
+            "flip-card";
+
+        wrapper.innerHTML = `
+
+            <div class="flip-inner">
+
+                <div class="flip-front">
+                    ❓
+                </div>
+
+                <div class="flip-back">
+                    ${card.value}
+                </div>
+
+            </div>
+
+        `;
+
+        wrapper.onclick = () =>
+            flipCard(
+                wrapper,
+                card,
+                index
+            );
+
+        grid.appendChild(wrapper);
+
+    });
+
+}
+
+
+function flipCard(wrapper,card,index){
+
+    if(
+        flipLock ||
+        wrapper.classList.contains("flipped")
+    ){
+        return;
+    }
+
+    wrapper.classList.add("flipped");
+
+
+    if(!flipFirst){
+
+        flipFirst = {
+            wrapper,
+            card
+        };
+
+        return;
+
+    }
+
+
+    flipSecond = {
+        wrapper,
+        card
+    };
+
+
+    flipLock = true;
+
+
+    if(
+        flipFirst.card.value ===
+        flipSecond.card.value
+    ){
+
+        flipMatches++;
+
+        flipFirst = null;
+        flipSecond = null;
+        flipLock = false;
+
+        if(flipMatches === 4){
+
+            correct(
+                document.getElementById(
+                    "flipMessage"
+                )
+            );
+
+        }
+
+    }else{
+
+        setTimeout(() => {
+
+            flipFirst.wrapper
+                .classList.remove("flipped");
+
+            flipSecond.wrapper
+                .classList.remove("flipped");
+
+            flipFirst = null;
+            flipSecond = null;
+            flipLock = false;
+
+        },900);
+
+    }
+
+}
+
+
+/* =====================================================
+   GAME 5: VÒNG QUAY
+===================================================== */
+
+let wheelRotation = 0;
+
+const wheelTasks = [
+
+    "Tìm chữ A trong bảng chữ cái.",
+
+    "Đọc to chữ B.",
+
+    "Tìm một đồ vật bắt đầu bằng C.",
+
+    "Nói một từ bắt đầu bằng M.",
+
+    "Tìm chữ O.",
+
+    "Đọc chữ T.",
+
+    "Tìm chữ X.",
+
+    "Nói một từ bắt đầu bằng S."
+
+];
+
+
+function spinWheel(){
+
+    const wheel =
+        document.getElementById("luckywheel");
+
+    const random =
+        Math.floor(
+            Math.random()*wheelTasks.length
+        );
+
+    const extra =
+        360 * 5 + random * 45;
+
+    wheelRotation += extra;
+
+    wheel.style.transform =
+        `rotate(${wheelRotation}deg)`;
+
+
+    setTimeout(() => {
+
+        document.getElementById(
+            "wheelMessage"
+        ).innerHTML =
+            "🎉 Nhiệm vụ của bé: <br><strong>"
+            + wheelTasks[random]
+            + "</strong>";
+
+        speak(
+            "Nhiệm vụ của bé là "
+            + wheelTasks[random]
+        );
+
+    },3000);
+
+}
+
+
+/* =====================================================
+   GAME 6: TÌM CHỮ KHÁC
+===================================================== */
+
+function newDifferent(){
+
+    const target =
+        letters[
+            Math.floor(
+                Math.random()*letters.length
+            )
+        ];
+
+    let different;
+
+    do{
+
+        different =
+            letters[
+                Math.floor(
+                    Math.random()*letters.length
+                )
+            ];
+
+    }while(different === target);
+
+
+    const arr =
+        Array(14).fill(target);
+
+    const correctIndex =
+        Math.floor(Math.random()*arr.length);
+
+    arr[correctIndex] =
+        different;
+
+
+    const grid =
+        document.getElementById(
+            "differentGrid"
+        );
+
+    grid.innerHTML = "";
+
+
+    arr.forEach((letter,index) => {
+
+        const btn =
+            document.createElement("button");
+
+        btn.className =
+            "diff-item";
+
+        btn.innerText =
+            letter;
+
+        btn.onclick = () => {
+
+            const msg =
+                document.getElementById(
+                    "differentMessage"
+                );
+
+            if(index === correctIndex){
+
+                btn.style.background =
+                    "#c9f5d1";
+
+                correct(msg);
+
+            }else{
+
+                wrong(msg);
+
+            }
+
+        };
+
+        grid.appendChild(btn);
+
+    });
+
+    document.getElementById(
+        "differentMessage"
+    ).innerHTML = "";
+
+}
+
+
+/* =====================================================
+   GAME 7: CHỮ CÒN THIẾU
+===================================================== */
+
+let missingAnswer = "";
+
+function newMissing(){
+
+    const start =
+        Math.floor(
+            Math.random()*20
+        );
+
+    const sequence =
+        letters.slice(
+            start,
+            start+6
+        );
+
+    if(sequence.length < 6){
+
+        return newMissing();
+
+    }
+
+
+    const missingIndex =
+        Math.floor(
+            Math.random()*sequence.length
+        );
+
+    missingAnswer =
+        sequence[missingIndex];
+
+
+    const box =
+        document.getElementById(
+            "sequence"
+        );
+
+    box.innerHTML = "";
+
+
+    sequence.forEach((letter,index) => {
+
+        const span =
+            document.createElement("span");
+
+        if(index === missingIndex){
+
+            span.innerText = "?";
+
+            span.className =
+                "missing";
+
+        }else{
+
+            span.innerText =
+                letter;
+
+        }
+
+        box.appendChild(span);
+
+    });
+
+
+    const options =
+        [missingAnswer];
+
+
+    while(options.length < 4){
+
+        const l =
+            letters[
+                Math.floor(
+                    Math.random()*letters.length
+                )
+            ];
+
+        if(!options.includes(l)){
+
+            options.push(l);
+
+        }
+
+    }
+
+
+    options.sort(() => Math.random()-.5);
+
+
+    const optionBox =
+        document.getElementById(
+            "missingOptions"
+        );
+
+    optionBox.innerHTML = "";
+
+
+    options.forEach(letter => {
+
+        const btn =
+            document.createElement("button");
+
+        btn.className =
+            "letter-btn";
+
+        btn.innerText =
+            letter;
+
+        btn.onclick = () => {
+
+            const msg =
+                document.getElementById(
+                    "missingMessage"
+                );
+
+            if(letter === missingAnswer){
+
+                correct(msg);
+
+            }else{
+
+                wrong(msg);
+
+            }
+
+        };
+
+        optionBox.appendChild(btn);
+
+    });
+
+
+    document.getElementById(
+        "missingMessage"
+    ).innerHTML = "";
+
+}
+
+
+/* =====================================================
+   GAME 8: TẬP TÔ
+===================================================== */
+
+let traceLetters = [
+    "A","Ă","Â","B","C","D","Đ","E","Ê","G"
+];
+
+let currentTrace = "A";
+
+
+function newTrace(){
+
+    currentTrace =
+        traceLetters[
+            Math.floor(
+                Math.random()*traceLetters.length
+            )
+        ];
+
+    document.getElementById(
+        "traceLetter"
+    ).innerText =
+        currentTrace;
+
+    clearCanvas();
+
+}
+
+
+function setupCanvas(){
+
+    const canvas =
+        document.getElementById(
+            "traceCanvas"
+        );
+
+    const rect =
+        canvas.getBoundingClientRect();
+
+    canvas.width =
+        rect.width * devicePixelRatio;
+
+    canvas.height =
+        rect.height * devicePixelRatio;
+
+    const ctx =
+        canvas.getContext("2d");
+
+    ctx.scale(
+        devicePixelRatio,
+        devicePixelRatio
+    );
+
+    ctx.lineWidth = 10;
+
+    ctx.lineCap = "round";
+
+    ctx.lineJoin = "round";
+
+    let drawing = false;
+
+
+    function getPosition(e){
+
+        const r =
+            canvas.getBoundingClientRect();
+
+        if(e.touches){
+
+            return {
+
+                x:e.touches[0].clientX-r.left,
+
+                y:e.touches[0].clientY-r.top
+
+            };
+
+        }
+
+        return {
+
+            x:e.clientX-r.left,
+
+            y:e.clientY-r.top
+
+        };
+
+    }
+
+
+    function start(e){
+
+        drawing = true;
+
+        const p =
+            getPosition(e);
+
+        ctx.beginPath();
+
+        ctx.moveTo(
+            p.x,
+            p.y
+        );
+
+    }
+
+
+    function move(e){
+
+        if(!drawing) return;
+
+        e.preventDefault();
+
+        const p =
+            getPosition(e);
+
+        ctx.lineTo(
+            p.x,
+            p.y
+        );
+
+        ctx.stroke();
+
+    }
+
+
+    function end(){
+
+        drawing = false;
+
+    }
+
+
+    canvas.addEventListener(
+        "mousedown",
+        start
+    );
+
+    canvas.addEventListener(
+        "mousemove",
+        move
+    );
+
+    canvas.addEventListener(
+        "mouseup",
+        end
+    );
+
+    canvas.addEventListener(
+        "mouseleave",
+        end
+    );
+
+
+    canvas.addEventListener(
+        "touchstart",
+        start,
+        {passive:false}
+    );
+
+    canvas.addEventListener(
+        "touchmove",
+        move,
+        {passive:false}
+    );
+
+    canvas.addEventListener(
+        "touchend",
+        end
+    );
+
+}
+
+
+function clearCanvas(){
+
+    const canvas =
+        document.getElementById(
+            "traceCanvas"
+        );
+
+    const ctx =
+        canvas.getContext("2d");
+
+    ctx.clearRect(
+        0,
+        0,
+        canvas.width,
+        canvas.height
+    );
+
+}
+
+
+function parentMessage(type){
+
+    const box =
+        document.getElementById(
+            "parentMessage"
+        );
+
+    const messages = {
+
+        book:
+        "📚 Khu vực đăng ký mua sách sẽ được kết nối với form đặt sách của Love cô Ly.",
+
+        home:
+        "👩‍🏫 Phụ huynh có thể đăng ký để cô Ly hướng dẫn cách đồng hành cùng bé tại nhà.",
+
+        class:
+        "📝 Khu vực đăng ký học sẽ được kết nối với form thông tin học viên.",
+
+        contact:
+        "💬 Thông tin liên hệ của Love cô Ly sẽ được cập nhật tại đây."
+
+    };
+
+    box.innerHTML =
+        messages[type];
+
+}
+
+
+/* =====================================================
+   KHỞI ĐỘNG
+===================================================== */
+
+updateScore();
+
+newRecognize();
+
+newCircle();
+
+newMatch();
+
+newFlip();
+
+newDifferent();
+
+newMissing();
+
+newTrace();
+
+setTimeout(
+    setupCanvas,
+    300
+);
+
+</script>
 
 </body>
 </html>
