@@ -1647,6 +1647,283 @@ footer{
   }
 
 }
+/* ===== LOVE CO LY HEADER ===== */
+
+.new-header{
+  width:100%;
+  min-height:78px;
+  padding:8px 28px;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:space-between !important;
+  gap:18px;
+
+  background:#fff !important;
+  border-bottom:1px solid #e5f1ea;
+
+  box-shadow:0 4px 18px rgba(30,100,70,.10);
+
+  position:sticky !important;
+  top:0;
+  z-index:9999;
+
+  font-family:Arial,sans-serif !important;
+}
+
+/* LOGO */
+
+.new-brand{
+  display:flex !important;
+  align-items:center !important;
+  gap:9px;
+  min-width:220px;
+}
+
+.new-logo{
+  width:52px;
+  height:52px;
+
+  display:flex !important;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:15px;
+
+  background:linear-gradient(145deg,#e9faed,#fff1d4);
+
+  font-size:32px;
+  flex-shrink:0;
+}
+
+.new-brand-name{
+  font-size:26px !important;
+  font-weight:900 !important;
+  line-height:1;
+
+  color:#29a968 !important;
+  white-space:nowrap;
+}
+
+.new-brand-name span{
+  color:#f47b20 !important;
+}
+
+.new-brand-sub{
+  margin-top:5px;
+
+  font-size:11px !important;
+  font-weight:600;
+
+  color:#58766b !important;
+  white-space:nowrap;
+}
+
+
+/* MENU */
+
+.new-nav{
+  flex:1;
+
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  gap:3px;
+  margin:0 auto;
+}
+
+.new-nav a{
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+
+  min-width:78px;
+  padding:7px 9px !important;
+
+  border-radius:26px;
+
+  text-decoration:none !important;
+
+  color:#50665d !important;
+
+  font-size:12px !important;
+  font-weight:700 !important;
+
+  line-height:1.15;
+  white-space:nowrap;
+
+  transition:all .25s ease;
+}
+
+.new-nav a:hover{
+  color:#168d55 !important;
+  background:#edf9f2;
+
+  transform:translateY(-2px);
+}
+
+.new-nav a.active{
+  color:#fff !important;
+
+  background:linear-gradient(
+    135deg,
+    #27ad69,
+    #178f55
+  );
+
+  box-shadow:
+    0 6px 16px
+    rgba(25,145,80,.22);
+}
+
+
+/* BÊN PHẢI */
+
+.new-header-actions{
+  display:flex !important;
+  align-items:center !important;
+
+  gap:10px;
+  min-width:155px;
+
+  justify-content:flex-end;
+}
+
+.new-search{
+  width:42px;
+  height:42px;
+
+  border:0 !important;
+  border-radius:50%;
+
+  background:#eff9f3 !important;
+
+  font-size:19px;
+  cursor:pointer;
+
+  transition:.25s;
+}
+
+.new-search:hover{
+  background:#dff4e8 !important;
+  transform:scale(1.05);
+}
+
+.new-login{
+  border:0 !important;
+
+  padding:11px 19px !important;
+
+  border-radius:25px;
+
+  color:#fff !important;
+
+  background:linear-gradient(
+    135deg,
+    #27ad69,
+    #168f55
+  ) !important;
+
+  font-size:13px !important;
+  font-weight:800 !important;
+
+  cursor:pointer;
+
+  box-shadow:
+    0 6px 15px
+    rgba(25,145,80,.18);
+
+  white-space:nowrap;
+}
+
+
+/* TABLET */
+
+@media(max-width:1050px){
+
+  .new-header{
+    padding:8px 15px;
+    gap:8px;
+  }
+
+  .new-brand{
+    min-width:190px;
+  }
+
+  .new-brand-name{
+    font-size:22px !important;
+  }
+
+  .new-nav a{
+    min-width:65px;
+    padding:7px 5px !important;
+    font-size:10px !important;
+  }
+
+  .new-header-actions{
+    min-width:120px;
+  }
+
+  .new-login{
+    padding:9px 12px !important;
+    font-size:11px !important;
+  }
+}
+
+
+/* ĐIỆN THOẠI */
+
+@media(max-width:700px){
+
+  .new-header{
+    min-height:auto;
+    flex-wrap:wrap;
+    padding:8px 10px;
+  }
+
+  .new-brand{
+    min-width:auto;
+  }
+
+  .new-logo{
+    width:42px;
+    height:42px;
+    font-size:26px;
+  }
+
+  .new-brand-name{
+    font-size:20px !important;
+  }
+
+  .new-brand-sub{
+    font-size:9px !important;
+  }
+
+  .new-header-actions{
+    min-width:auto;
+  }
+
+  .new-nav{
+    order:3;
+    width:100%;
+
+    justify-content:flex-start !important;
+
+    overflow-x:auto;
+    padding-bottom:3px;
+  }
+
+  .new-nav a{
+    min-width:62px;
+    font-size:10px !important;
+  }
+
+  .new-login{
+    padding:9px 12px !important;
+  }
+}    
 </style>
 </head>
 
