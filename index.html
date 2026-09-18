@@ -1182,6 +1182,68 @@ function showHome(){
    PHÁT ÂM
 ===================================================== */
 
+/* ================= PHÁT ÂM CHỮ CÁI TIẾNG VIỆT ================= */
+
+const vietnameseLetterSounds = {
+    "A": "a",
+    "Ă": "ă",
+    "Â": "â",
+    "B": "bờ",
+    "C": "cờ",
+    "D": "dờ",
+    "Đ": "đờ",
+    "E": "e",
+    "Ê": "ê",
+    "G": "gờ",
+    "H": "hờ",
+    "I": "i",
+    "K": "cờ",
+    "L": "lờ",
+    "M": "mờ",
+    "N": "nờ",
+    "O": "o",
+    "Ô": "ô",
+    "Ơ": "ơ",
+    "P": "pờ",
+    "Q": "quy",
+    "R": "rờ",
+    "S": "sờ",
+    "T": "tờ",
+    "U": "u",
+    "Ư": "ư",
+    "V": "vờ",
+    "X": "xờ",
+    "Y": "i dài"
+};
+
+
+/* Đọc chữ cái theo cách phát âm tiếng Việt */
+
+function speakLetter(letter){
+
+    const sound =
+        vietnameseLetterSounds[letter] || letter;
+
+    if("speechSynthesis" in window){
+
+        const speech =
+            new SpeechSynthesisUtterance(sound);
+
+        speech.lang = "vi-VN";
+
+        speech.rate = 0.7;
+
+        speech.pitch = 1;
+
+        speechSynthesis.cancel();
+
+        speechSynthesis.speak(speech);
+    }
+}
+
+
+/* Đọc câu thông thường */
+
 function speak(text){
 
     if("speechSynthesis" in window){
@@ -1191,14 +1253,12 @@ function speak(text){
 
         speech.lang = "vi-VN";
 
-        speech.rate = 0.8;
+        speech.rate = 0.75;
 
         speechSynthesis.cancel();
 
         speechSynthesis.speak(speech);
-
     }
-
 }
 
 
@@ -1282,9 +1342,7 @@ function newRecognize(){
 
 function speakTarget(){
 
-    speak(
-        "Chữ " + recognizeTarget
-    );
+    speakLetter(recognizeTarget);
 
 }
 
