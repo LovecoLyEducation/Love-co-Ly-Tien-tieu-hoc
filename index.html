@@ -560,6 +560,19 @@ footer{
 
 }
 
+.upper-letter{
+  display:block;
+  font-size:42px;
+  font-weight:800;
+  line-height:1.1;
+}
+
+.lower-letter{
+  display:block;
+  font-size:30px;
+  font-weight:600;
+  margin-top:4px;
+}
 </style>
 </head>
 
@@ -1061,35 +1074,41 @@ const letterPairs = {
 ===================================================== */
 
 const pictureData = [
-  {letter:"A", picture:"🍎", word:"Táo"},
-  {letter:"Ă", picture:"🍽️", word:"Ăn"},
-  {letter:"Â", picture:"🫖", word:"Ấm"},
-  {letter:"B", picture:"⚽", word:"Bóng"},
-  {letter:"C", picture:"🐟", word:"Cá"},
-  {letter:"D", picture:"🐐", word:"Dê"},
-  {letter:"Đ", picture:"💡", word:"Đèn"},
-  {letter:"E", picture:"👦", word:"Em"},
-  {letter:"Ê", picture:"🐸", word:"Ếch"},
-  {letter:"G", picture:"🐔", word:"Gà"},
-  {letter:"H", picture:"🌸", word:"Hoa"},
-  {letter:"I", picture:"🦔", word:"Ích"},
-  {letter:"K", picture:"🍦", word:"Kem"},
-  {letter:"L", picture:"🍃", word:"Lá"},
-  {letter:"M", picture:"🐱", word:"Mèo"},
-  {letter:"N", picture:"🎩", word:"Nón"},
-  {letter:"O", picture:"🐝", word:"Ong"},
-  {letter:"Ô", picture:"🚗", word:"Ô tô"},
-  {letter:"Ơ", picture:"🌶️", word:"Ớt"},
-  {letter:"P", picture:"🍜", word:"Phở"},
-  {letter:"Q", picture:"🍊", word:"Quả"},
-  {letter:"R", picture:"🐢", word:"Rùa"},
-  {letter:"S", picture:"⭐", word:"Sao"},
-  {letter:"T", picture:"🐰", word:"Thỏ"},
-  {letter:"U", picture:"👢", word:"Ủng"},
-  {letter:"Ư", picture:"🦋", word:"Ước"},
-  {letter:"V", picture:"🐘", word:"Voi"},
-  {letter:"X", picture:"🚲", word:"Xe"},
-  {letter:"Y", picture:"💉", word:"Y tế"}
+  {letter:"A", lower:"a", picture:"🍎", word:"Táo"},
+  {letter:"Ă", lower:"ă", picture:"🧸", word:"Ăn"},
+  {letter:"Â", lower:"â", picture:"🫖", word:"Ấm"},
+
+  {letter:"B", lower:"b", picture:"⚽", word:"Bóng"},
+  {letter:"C", lower:"c", picture:"🐟", word:"Cá"},
+  {letter:"D", lower:"d", picture:"🥄", word:"Dê"},
+  {letter:"Đ", lower:"đ", picture:"🦌", word:"Đồ chơi"},
+
+  {letter:"E", lower:"e", picture:"👶", word:"Em"},
+  {letter:"Ê", lower:"ê", picture:"🐸", word:"Ếch"},
+
+  {letter:"G", lower:"g", picture:"🐔", word:"Gà"},
+  {letter:"H", lower:"h", picture:"🌸", word:"Hoa"},
+  {letter:"I", lower:"i", picture:"✏️", word:"In"},
+
+  {letter:"K", lower:"k", picture:"🍬", word:"Kẹo"},
+  {letter:"L", lower:"l", picture:"🍋", word:"Lê"},
+  {letter:"M", lower:"m", picture:"🐱", word:"Mèo"},
+  {letter:"N", lower:"n", picture:"👃", word:"Nón"},
+
+  {letter:"O", lower:"o", picture:"🐚", word:"Ốc"},
+  {letter:"Ô", lower:"ô", picture:"☂️", word:"Ô"},
+  {letter:"Ơ", lower:"ơ", picture:"🐟", word:"Ớt"},
+
+  {letter:"P", lower:"p", picture:"🍍", word:"Pin"},
+  {letter:"Q", lower:"q", picture:"🎁", word:"Quà"},
+  {letter:"R", lower:"r", picture:"🌳", word:"Rừng"},
+  {letter:"S", lower:"s", picture:"🌱", word:"Sen"},
+  {letter:"T", lower:"t", picture:"🏠", word:"Thỏ"},
+  {letter:"U", lower:"u", picture:"🪁", word:"Ưu"},
+  {letter:"Ư", lower:"ư", picture:"🦋", word:"Ước"},
+  {letter:"V", lower:"v", picture:"🌈", word:"Vòi"},
+  {letter:"X", lower:"x", picture:"🚗", word:"Xe"},
+  {letter:"Y", lower:"y", picture:"🪁", word:"Yến"}
 ];
 
 
@@ -1491,7 +1510,10 @@ function newCircle(){
 
         btn.className = "circle-letter";
 
-        btn.innerText = letter;
+        btn.innerHTML = `
+  <span class="upper-letter">${letter}</span>
+  <span class="lower-letter">${letterPairs[letter] || ""}</span>
+`;
 
         btn.onclick = () => {
 
@@ -1583,7 +1605,10 @@ function newMatch(){
 
         div.className = "match-item";
 
-        div.innerText = item.letter;
+        div.innerHTML = `
+  <span class="upper-letter">${item.letter}</span>
+  <span class="lower-letter">${item.lower}</span>
+`;
 
         div.dataset.letter =
             item.letter;
